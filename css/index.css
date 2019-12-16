@@ -1,1 +1,265 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* Review the example resume. Notice how simplistic the example resume is. Develop a simple layout of your choosing. If you are struggling to be creative, you may use the example resume as your design file. Note: you are only required to build one page, anything more than that would be stretch.
+ DONE The resume content will be provided by you. The content can be about you or a fictional character.
+ DONE Content: Navigation - Build a simple navigation with 4 items of your choosing
+ DONE Content: Intro - Have a short introduction as to why you would be a good hire
+ DONE Content: Skills - Showcase a list of skills you have somewhere on your resume
+ DONE Content: Work History - Showcase your work history somewhere on your resume
+ DONE Content: Contact - Provide some way a potential employer could contact you. Phone number, email, or a full on contact form (doesn't have to work)
+ DONE Variables: Incorporate variables in your project for color and font stacks.
+ DONE Nesting: Every selector should be nested inside the main container. Avoid having global styles unless they are element level.
+ DONE Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
+ DONE Mobile: Use nested-at rules to provide a mobile version of your resume. Use 500px as a max-width for mobile.
+ STRETCH GOALS 
+ DONE Incorporate a google font of your choosing
+ NOT DONE Convert the great idea CSS into LESS. Introduce variables, mixins, nesting, etc.
+ DONE Create a link to the portfolio page and create a layout that would allow users to see your work. A good idea is to link projects back to their github repos so employers can see your code.
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'font-family: ' Fira Sans ', sans-serif;';
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/* Nav Menu */
+.simple {
+  margin-right: 2rem;
+}
+.simple ul {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  /* justify-content: center; */
+  justify-content: space-between;
+}
+.simple ul li {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.simple ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 500px) {
+  .simple ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .simple ul ul {
+    justify-content: flex-end;
+  }
+  .simple ul li {
+    margin-bottom: 0px;
+  }
+}
+.top {
+  margin: 0 6rem 0 6rem;
+}
+.top img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+.top h1 {
+  font-size: 3rem;
+}
+.top h3 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.top .description {
+  border-top: 1px solid lightgrey;
+  padding-top: 1rem;
+}
+.top .description button {
+  padding: 7px 12px 7px 12px;
+  margin-top: 1rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  background-color: grey;
+  color: #fff;
+}
+.bottom {
+  margin: 5rem 2rem 0 2rem;
+}
+.bottom h3 {
+  font-size: 1.5rem;
+}
+.bottom .stuff {
+  margin-top: 3rem;
+}
+.bottom .stuff ul {
+  margin-top: 1rem;
+  border: 1px solid grey;
+}
+.bottom .stuff ul li {
+  border-top: 1px solid grey;
+  padding: 1rem;
+}
+.bottom .listen p {
+  margin-top: 1rem;
+}
+.bottom .sub {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2rem;
+}
+@media (min-width: 500px) {
+  .bottom .sub {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bottom .sub .stuff {
+    margin-top: 0;
+  }
+}
+.grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid black;
+}
+.grid span {
+  padding: 1.5rem 4px;
+  border-bottom: 1px solid black;
+}
+footer {
+  background-color: grey;
+  margin-top: 2rem;
+  color: #fff;
+  text-align: center;
+  min-height: 4rem;
+}
